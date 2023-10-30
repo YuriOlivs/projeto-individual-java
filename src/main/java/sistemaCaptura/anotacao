@@ -1,0 +1,52 @@
+
+//        String jdbcURL = "jdbc:mysql://localhost:3306/";
+//        String usuario = "seu_usuario";
+//        String senha = "sua_senha";
+//        String databaseName = "nowl";
+//
+//        try {
+//            Connection connection = DriverManager.getConnection(jdbcURL, usuario, senha);
+//            Statement statement = connection.createStatement();
+//
+//
+//            statement.executeUpdate("CREATE DATABASE IF NOT EXISTS " + databaseName);
+//            statement.executeUpdate("USE " + databaseName);
+//
+//
+//            String createInstituicaoTable = "CREATE TABLE IF NOT EXISTS instituicao (" +
+//                    "codigoHex CHAR(6) PRIMARY KEY," +
+//                    "nome VARCHAR(50) NOT NULL," +
+//                    "sigla VARCHAR(30) NOT NULL," +
+//                    "imagem LONGBLOB NOT NULL" +
+//                    ")";
+//            statement.executeUpdate(createInstituicaoTable);
+//
+//            String createUsuarioTable = "CREATE TABLE IF NOT EXISTS usuario (" +
+//                    "idUsuario INT PRIMARY KEY AUTO_INCREMENT," +
+//                    "nome VARCHAR(50) NOT NULL," +
+//                    "email VARCHAR(100) UNIQUE NOT NULL," +
+//                    "senha VARCHAR(20) NOT NULL," +
+//                    "nivPermissao INT CONSTRAINT CHK_nivPermissao CHECK (nivPermissao IN (1, 2, 3, 4))," +
+//                    "FkInstituicao CHAR(6)," +
+//                    "CONSTRAINT fkInst FOREIGN KEY (FkInstituicao) REFERENCES instituicao(codigoHex)" +
+//                    ")";
+//            statement.executeUpdate(createUsuarioTable);
+//
+//            String createHardwareTable = "CREATE TABLE IF NOT EXISTS Hardware (" +
+//                    "idHardware INT PRIMARY KEY AUTO_INCREMENT," +
+//                    "modelCpu VARCHAR(45) NOT NULL," +
+//                    "qtdNucleos INT NOT NULL," +
+//                    "tamDisco INT NOT NULL," +
+//                    "tipoDisco VARCHAR(45) NOT NULL," +
+//                    " modelRAM VARCHAR(45) NOT NULL," +
+//                    "tamRam INT NOT NULL"+
+//                    ")";
+//            statement.executeUpdate(createHardwareTable);
+//
+//            statement.close();
+//            connection.close();
+//
+//            System.out.println("Banco de dados e tabelas criados com sucesso.");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
